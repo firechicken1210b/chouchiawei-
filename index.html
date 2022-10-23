@@ -1,0 +1,752 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>chouchiawei : </title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="e2a4d99b-0e92-4b30-9750-9f87fb4b5fa0" class="page sans"><header><h1 class="page-title">chouchiawei : </h1></header><div class="page-body"><p id="9bc488cf-2e11-4879-a7e9-0009bbe03af0" class="">
+</p><p id="5c46afc4-e7e4-4eb4-bac3-f78c6f166dc3" class="">
+</p><p id="2cd09a63-6a27-4028-acd1-f366a2312dc8" class="">
+</p><figure id="1b25b9ea-10ae-468a-a1c5-42affb3c9efc" class="image"><a href="chouchiawei%20e2a4d99b0e924b3097509f87fb4b5fa0/Untitled.png"><img style="width:384px" src="chouchiawei%20e2a4d99b0e924b3097509f87fb4b5fa0/Untitled.png"/></a></figure><figure id="c3b6a8e5-39d1-4050-a323-5d6ada5d3052" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mstyle mathsize="0.9em"><mtext>我約從2014、2015年間開始符號相關的創作 我在繪畫中尋找歸屬 在不具體的圖像中感受到自在</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>I have been working on asemic related paintings since around 2014 and 2015.</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext> I am looking for a place to belong in my paintings and feel at ease in the vague、obscure images.</mtext></mstyle></mstyle></mstyle></mrow><annotation encoding="application/x-tex">\small\text{我約從2014、2015年間開始符號相關的創作 我在繪畫中尋找歸屬 在不具體的圖像中感受到自在} \\
+\small\text{I have been working on asemic related paintings since around 2014 and 2015.}
+ \\
+\small\text{
+I am looking for a place to belong in my paintings and feel at ease in the vague、obscure images.}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.614997em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord cjk_fallback">我約從</span><span class="mord">2014</span><span class="mord cjk_fallback">、</span><span class="mord">2015</span><span class="mord cjk_fallback">年間開始符號相關的創作</span><span class="mord"> </span><span class="mord cjk_fallback">我在繪畫中尋找歸屬</span><span class="mord"> </span><span class="mord cjk_fallback">在不具體的圖像中感受到自在</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.799992em;vertical-align:-0.174996em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">I have been working on asemic related paintings since around 2014 and 2015.</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.799992em;vertical-align:-0.174996em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord"> I am looking for a place to belong in my paintings and feel at ease in the vague</span><span class="mord cjk_fallback">、</span><span class="mord">obscure images.</span></span></span></span></span></span></div></figure><p id="76c700ed-dba5-445c-90bc-72de34dbd0e2" class="">
+</p><p id="e0df97ff-fc40-4bf3-8bba-fe1dec2bd80b" class="">
+</p><p id="055748cd-17fa-4fab-86de-e8930f70b6f1" class="">
+</p><figure id="e3c804f9-358d-451e-b497-08cf8e2cd771" class="image" style="text-align:center"><a href="chouchiawei%20e2a4d99b0e924b3097509f87fb4b5fa0/Untitled%201.png"><img style="width:288px" src="chouchiawei%20e2a4d99b0e924b3097509f87fb4b5fa0/Untitled%201.png"/></a></figure><figure id="559b6da3-42c0-4ceb-8b74-9e7a0bd02f05" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mstyle mathsize="0.9em"><mtext>我時常問自己想做的 很簡單的 很具體的 我希望自己輕裝而行</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>I often ask myself what I want to do? what is simple? what is pure? I want to take it smoothly.</mtext></mstyle></mstyle></mrow><annotation encoding="application/x-tex">\small\text{我時常問自己想做的 很簡單的 很具體的 我希望自己輕裝而行} \\
+\small\text{I often ask myself     what I want to do? 
+what is simple?  
+what is pure?
+I want to take it smoothly.}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.614997em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord cjk_fallback">我時常問自己想做的</span><span class="mord"> </span><span class="mord cjk_fallback">很簡單的</span><span class="mord"> </span><span class="mord cjk_fallback">很具體的</span><span class="mord"> </span><span class="mord cjk_fallback">我希望自己輕裝而行</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.799992em;vertical-align:-0.174996em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">I often ask myself what I want to do? what is simple? what is pure? I want to take it smoothly.</span></span></span></span></span></span></div></figure><p id="aec13be5-a7bf-4da7-92b2-28723ed2e800" class="">
+</p><p id="85337b82-b130-4a3f-9c83-15d809b6ed82" class="">
+</p><p id="0d918517-56e8-4de2-ad5e-037d9970ca67" class="">
+</p><div id="d2ec3a4f-10d4-457d-b778-a1e45ffc8a2a" class="column-list"><div id="da071013-0825-45cc-b180-b36a72e96fcf" style="width:33.333333333333336%" class="column"><figure id="80736bb1-57ea-46ed-acea-160771cd031a" class="image"><a href="chouchiawei%20e2a4d99b0e924b3097509f87fb4b5fa0/Untitled.jpeg"><img style="width:240px" src="chouchiawei%20e2a4d99b0e924b3097509f87fb4b5fa0/Untitled.jpeg"/></a><figcaption><em>我想要線條蓋過其他線條.
+我想要蛇行.
+我想要營造一個空間.
+I want lines to override the other lines.
+I want to zigzag.
+I want to shape a space.</em></figcaption></figure></div><div id="ebd77462-d872-4a47-8422-973edf5bb4bd" style="width:33.333333333333336%" class="column"><figure id="4cd43a8e-8812-4190-8608-c5e23f8a8412" class="image" style="text-align:center"><a href="chouchiawei%20e2a4d99b0e924b3097509f87fb4b5fa0/Untitled%201.jpeg"><img style="width:240px" src="chouchiawei%20e2a4d99b0e924b3097509f87fb4b5fa0/Untitled%201.jpeg"/></a><figcaption><em>我想要假裝畫一道影子
+我想要這邊有一條河.
+我想要快速 柔軟.
+I want to draw a shadow.
+I want to draw a river.
+I want to be fast and soft.</em></figcaption></figure></div><div id="c4bd48bb-3a56-4c13-9b47-0e1408b98f0d" style="width:33.33333333333333%" class="column"><figure id="92ef4d65-e35d-4879-bacd-c362a2a57a03" class="image"><a href="chouchiawei%20e2a4d99b0e924b3097509f87fb4b5fa0/Untitled%202.jpeg"><img style="width:240px" src="chouchiawei%20e2a4d99b0e924b3097509f87fb4b5fa0/Untitled%202.jpeg"/></a><figcaption><em>我想要細的.
+我喜歡藍色.
+</em>I like thin line.
+I like blue.</figcaption></figure></div></div><p id="15111a7d-f818-4781-b773-e19d35fe08ba" class="">
+</p><p id="fb29b20c-cc74-4447-9c57-6e274cc9b7a6" class="">
+</p><p id="15fb931d-876d-430d-8e56-42822a6c31a4" class="">
+</p><figure id="69cf1a3e-08e1-4785-92a2-34e24e28fdf6" class="image"><a href="chouchiawei%20e2a4d99b0e924b3097509f87fb4b5fa0/Untitled%202.png"><img style="width:480px" src="chouchiawei%20e2a4d99b0e924b3097509f87fb4b5fa0/Untitled%202.png"/></a></figure><figure id="a1aa3e41-b22a-4c9f-8a51-f86129b7e075" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mstyle mathsize="0.9em"><mtext>麥克筆和便條紙是我最主要的創作工具</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>我會把畫過的便條紙貼在背後 當整疊畫完之後 它像被風吹過 遍地都是符號</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>Marker pens and Post-it notes are my main tools.</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>I would stick the painted note on it back.</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>When the whole paper was finished.</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>It’s like the wind has blown and there are symbols all over the place.</mtext></mstyle></mstyle></mstyle></mstyle></mstyle></mstyle></mrow><annotation encoding="application/x-tex">\small\text{麥克筆和便條紙是我最主要的創作工具} \\
+\small\text{我會把畫過的便條紙貼在背後 當整疊畫完之後 它像被風吹過 遍地都是符號}
+ \\
+\small\text{Marker pens and Post-it notes are my main tools.} \\
+\small\text{I would stick the painted note on it back.}\\
+\small\text{When the whole paper was finished.}\\
+\small\text{It&#x27;s like the wind has blown and there are symbols all over the place.}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.614997em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord cjk_fallback">麥克筆和便條紙是我最主要的創作工具</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.614997em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord cjk_fallback">我會把畫過的便條紙貼在背後</span><span class="mord"> </span><span class="mord cjk_fallback">當整疊畫完之後</span><span class="mord"> </span><span class="mord cjk_fallback">它像被風吹過</span><span class="mord"> </span><span class="mord cjk_fallback">遍地都是符號</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.799992em;vertical-align:-0.174996em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">Marker pens and Post-it notes are my main tools.</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.799992em;vertical-align:-0.174996em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">I would stick the painted note on it back.</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.799992em;vertical-align:-0.174996em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">When the whole paper was finished.</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.799992em;vertical-align:-0.174996em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">It’s like the wind has blown and there are symbols all over the place.</span></span></span></span></span></span></div></figure><p id="e883789b-2363-4e95-bc99-76333c715281" class="">
+</p><p id="c9cc0471-b602-46b8-979f-4a9f10ef5a53" class="">
+</p><p id="08ea9de1-0d4f-49a7-a15d-9d590eaed7f6" class="">
+</p><figure id="f10cf60e-9d59-4210-9ea8-d87cfd9d74e2" class="image"><a href="chouchiawei%20e2a4d99b0e924b3097509f87fb4b5fa0/Untitled%203.png"><img style="width:320px" src="chouchiawei%20e2a4d99b0e924b3097509f87fb4b5fa0/Untitled%203.png"/></a></figure><figure id="b5a445bc-0ec4-4544-8bc6-db0d54cfc9a3" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mstyle mathsize="0.9em"><mtext>我可以一天內連續畫很長的時間 但通常我不會這麼做</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>我喜歡時間拉長了我的風格 我喜歡在相似之中 觀賞自己的差異 就像雲跟海浪 很像但每天都不一樣</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>I can paint for a long time in a day, but I don’t usually do that.</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>I like the way time stretches my styles.</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>I like to see my differences in the similarities.</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>It’s like clouds and waves, they’re similar but they’re different every day.</mtext></mstyle></mstyle></mstyle></mstyle></mstyle></mstyle></mrow><annotation encoding="application/x-tex">\small\text{我可以一天內連續畫很長的時間 但通常我不會這麼做} \\
+\small\text{我喜歡時間拉長了我的風格 我喜歡在相似之中 觀賞自己的差異 就像雲跟海浪 很像但每天都不一樣} \\
+\small\text{I can paint for a long time in a day, but I don&#x27;t usually do that.} \\
+\small\text{I like the way time stretches my styles.} \\
+\small\text{I like to see my differences in the similarities.}
+ \\
+\small\text{It&#x27;s like clouds and waves, they&#x27;re similar but they&#x27;re different every day.}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.614997em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord cjk_fallback">我可以一天內連續畫很長的時間</span><span class="mord"> </span><span class="mord cjk_fallback">但通常我不會這麼做</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.614997em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord cjk_fallback">我喜歡時間拉長了我的風格</span><span class="mord"> </span><span class="mord cjk_fallback">我喜歡在相似之中</span><span class="mord"> </span><span class="mord cjk_fallback">觀賞自己的差異</span><span class="mord"> </span><span class="mord cjk_fallback">就像雲跟海浪</span><span class="mord"> </span><span class="mord cjk_fallback">很像但每天都不一樣</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.799992em;vertical-align:-0.174996em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">I can paint for a long time in a day, but I don’t usually do that.</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.799992em;vertical-align:-0.174996em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">I like the way time stretches my styles.</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.799992em;vertical-align:-0.174996em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">I like to see my differences in the similarities.</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.799992em;vertical-align:-0.174996em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">It’s like clouds and waves, they’re similar but they’re different every day.</span></span></span></span></span></span></div></figure><p id="3139bc69-04f3-422c-98e6-dc9e31409c84" class="">
+</p><p id="ed4173a6-2b66-44d0-b3c3-2a97d08b0dd0" class="">
+</p><p id="0afe7a29-523b-4fa5-b0a5-80b71e932bd5" class="">
+</p><figure id="1e0a82ab-7565-4b81-8f34-9b777e0572ed" class="image"><a href="chouchiawei%20e2a4d99b0e924b3097509f87fb4b5fa0/Untitled%204.png"><img style="width:1000px" src="chouchiawei%20e2a4d99b0e924b3097509f87fb4b5fa0/Untitled%204.png"/></a></figure><figure id="db403c9f-6d07-475c-a345-8f4f0f1b7747" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mstyle mathsize="0.9em"><mtext>我仍然不清楚我的動機 或是我在想什麼</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>每一幅畫對我而言都像一篇故事 我能感受到一些事情 甚至似乎回想起當時的心情</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>但更多的是快樂</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>I’m still not sure what motivates me or what I’m thinking.</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>Each painting is like a story to me, I even seem to be able to remember how I was feeling.</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>But more than that, it’s pleasured.</mtext></mstyle></mstyle></mstyle></mstyle></mstyle></mstyle></mrow><annotation encoding="application/x-tex">\small\text{我仍然不清楚我的動機 或是我在想什麼} \\
+\small\text{每一幅畫對我而言都像一篇故事 我能感受到一些事情 甚至似乎回想起當時的心情} \\
+\small\text{但更多的是快樂} \\
+\small\text{I&#x27;m still not sure what motivates me or what I&#x27;m thinking.} \\
+\small\text{Each painting is like a story to me, I even seem to be able to remember how I was feeling.} \\
+\small\text{But more than that, it&#x27;s pleasured.}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.614997em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord cjk_fallback">我仍然不清楚我的動機</span><span class="mord"> </span><span class="mord cjk_fallback">或是我在想什麼</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.614997em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord cjk_fallback">每一幅畫對我而言都像一篇故事</span><span class="mord"> </span><span class="mord cjk_fallback">我能感受到一些事情</span><span class="mord"> </span><span class="mord cjk_fallback">甚至似乎回想起當時的心情</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.614997em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord cjk_fallback">但更多的是快樂</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.799992em;vertical-align:-0.174996em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">I’m still not sure what motivates me or what I’m thinking.</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.799992em;vertical-align:-0.174996em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">Each painting is like a story to me, I even seem to be able to remember how I was feeling.</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.799992em;vertical-align:-0.174996em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">But more than that, it’s pleasured.</span></span></span></span></span></span></div></figure><p id="8d375eef-b7c1-44c6-aad6-9cfffb3aa3a9" class="">
+</p><p id="b18fff9c-3f2d-41da-88e6-810f458218b0" class="">
+</p><p id="44957591-d73f-4f79-9588-935607eee0b0" class="">
+</p><div id="3797c202-2bed-41ca-b2bd-12cb18b34b0c" class="column-list"><div id="30103904-aa3e-4541-9d54-c4a8231ddb7e" style="width:50%" class="column"><figure id="d33be5ce-64a9-4bd0-a61b-4a9e3d993ab7" class="image"><a href="chouchiawei%20e2a4d99b0e924b3097509f87fb4b5fa0/OBGTKCDMA.jpg"><img style="width:432px" src="chouchiawei%20e2a4d99b0e924b3097509f87fb4b5fa0/OBGTKCDMA.jpg"/></a></figure></div><div id="41ea27c9-8ba7-4c6b-9df4-fb56a1ef2f0b" style="width:50%" class="column"><figure id="0a7dc994-750a-4c57-89c8-fb7b7ddb4fad" class="image"><a href="chouchiawei%20e2a4d99b0e924b3097509f87fb4b5fa0/02_3_4s.png"><img style="width:432px" src="chouchiawei%20e2a4d99b0e924b3097509f87fb4b5fa0/02_3_4s.png"/></a></figure></div></div><figure id="35175475-7b67-4c88-9732-087feb1cd127" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mstyle mathsize="0.9em"><mtext>嘗試不同的媒體是我很重要的靈感來源 就像好好去面對 感受生活中各種不同的事</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>它們成為我重要的營養 或是混亂 進入我的創作之中</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>Trying different media is very important for me.</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>It’s like facing and feeling all the different things in life.</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>They’re my important inspiration or confusion into my work.</mtext></mstyle></mstyle></mstyle></mstyle></mstyle></mrow><annotation encoding="application/x-tex">\small\text{嘗試不同的媒體是我很重要的靈感來源 就像好好去面對 感受生活中各種不同的事} \\
+\small\text{它們成為我重要的營養 或是混亂 進入我的創作之中} \\
+\small\text{Trying different media is very important for me.} \\
+\small\text{It&#x27;s like facing and feeling all the different things in life.} \\
+\small\text{They&#x27;re my important inspiration or confusion into my work.}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.614997em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord cjk_fallback">嘗試不同的媒體是我很重要的靈感來源</span><span class="mord"> </span><span class="mord cjk_fallback">就像好好去面對</span><span class="mord"> </span><span class="mord cjk_fallback">感受生活中各種不同的事</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.614997em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord cjk_fallback">它們成為我重要的營養</span><span class="mord"> </span><span class="mord cjk_fallback">或是混亂</span><span class="mord"> </span><span class="mord cjk_fallback">進入我的創作之中</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.799992em;vertical-align:-0.174996em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">Trying different media is very important for me.</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.799992em;vertical-align:-0.174996em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">It’s like facing and feeling all the different things in life.</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.799992em;vertical-align:-0.174996em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">They’re my important inspiration or confusion into my work.</span></span></span></span></span></span></div></figure><p id="0101243c-724e-47d2-81d2-1850152c493b" class="">
+</p><p id="4eca82bd-4acd-4295-af77-074900a49f9e" class="">
+</p><p id="6d42fc53-f1fd-4a38-a35b-12d3c829f764" class="">
+</p><figure id="d07a82e3-e529-4dd7-9914-800d35041056" class="image"><a href="chouchiawei%20e2a4d99b0e924b3097509f87fb4b5fa0/Untitled%205.png"><img style="width:432px" src="chouchiawei%20e2a4d99b0e924b3097509f87fb4b5fa0/Untitled%205.png"/></a></figure><figure id="a1f7795a-4421-4273-895d-462503fe4861" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mstyle mathsize="0.9em"><mtext>在過去數年 創作符號會被作為祝福 送給身邊的朋友 亦或紀念見面的時刻</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>我也很幸運 能持續透過創作 認識自己 及許多新的朋友 因而做出更多樣的作品</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>如果你剛好遇見我的創作也感興趣 歡迎隨時跟我聊聊</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>Over the past few years,</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>I’ve painted that have been sent as blessings to friends around me,</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext> or as a reminder of the times I’ve met friends.</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>I’ve also been very lucky to know more about myself and to make new friends through my work.</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>If you happen to come across my work and are interested in it, please feel free to talk to me.</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>　</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext>All your encouragement means a lot for me.</mtext></mstyle></mstyle></mstyle></mstyle></mstyle></mstyle></mstyle></mstyle></mstyle></mstyle></mrow><annotation encoding="application/x-tex">\small\text{在過去數年 創作符號會被作為祝福 送給身邊的朋友 亦或紀念見面的時刻} \\
+\small\text{我也很幸運 能持續透過創作 認識自己 及許多新的朋友 因而做出更多樣的作品} \\
+\small\text{如果你剛好遇見我的創作也感興趣 歡迎隨時跟我聊聊} \\
+\small\text{Over the past few years,} \\
+\small\text{I&#x27;ve painted that have been sent as blessings to friends around me,} \\
+\small\text{ or as a reminder of the times I&#x27;ve met friends.} \\
+\small\text{I&#x27;ve also been very lucky to know more about myself and to make new friends through my work.} \\
+\small\text{If you happen to come across my work and are interested in it, please feel free to talk to me.} \\
+\small\text{　}\\
+\small\text{All your encouragement means a lot for me.}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.614997em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord cjk_fallback">在過去數年</span><span class="mord"> </span><span class="mord cjk_fallback">創作符號會被作為祝福</span><span class="mord"> </span><span class="mord cjk_fallback">送給身邊的朋友</span><span class="mord"> </span><span class="mord cjk_fallback">亦或紀念見面的時刻</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.614997em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord cjk_fallback">我也很幸運</span><span class="mord"> </span><span class="mord cjk_fallback">能持續透過創作</span><span class="mord"> </span><span class="mord cjk_fallback">認識自己</span><span class="mord"> </span><span class="mord cjk_fallback">及許多新的朋友</span><span class="mord"> </span><span class="mord cjk_fallback">因而做出更多樣的作品</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.614997em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord cjk_fallback">如果你剛好遇見我的創作也感興趣</span><span class="mord"> </span><span class="mord cjk_fallback">歡迎隨時跟我聊聊</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.799992em;vertical-align:-0.174996em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">Over the past few years,</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.799992em;vertical-align:-0.174996em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">I’ve painted that have been sent as blessings to friends around me,</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.624996em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord"> or as a reminder of the times I’ve met friends.</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.799992em;vertical-align:-0.174996em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">I’ve also been very lucky to know more about myself and to make new friends through my work.</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.799992em;vertical-align:-0.174996em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">If you happen to come across my work and are interested in it, please feel free to talk to me.</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.614997em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord cjk_fallback">　</span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.799992em;vertical-align:-0.174996em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord">All your encouragement means a lot for me.</span></span></span></span></span></span></div></figure><p id="631c67ce-baee-443b-98d6-bf318432afaa" class="">
+</p><p id="a0d8a110-fedd-44f6-a741-60c51a281a58" class="">
+</p><p id="5e52be3e-bd6f-47bb-bf72-64cfddfc13b3" class="">
+</p><p id="bef8feee-0031-4f20-9d4b-1b0799dcb17f" class="">
+</p><p id="13119fff-3040-428c-bb28-71656c4da219" class="">
+</p><p id="486a43c4-1809-4b7e-a50c-8a48a57b3948" class="">
+</p><hr id="e2363c28-7a57-4813-ba56-50b4ee1bef13"/><p id="7a2d9347-1033-4eab-b730-c0e692f956f1" class="">
+</p><figure id="fa100a65-7397-4cb8-b675-a598e7bff6b1" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mstyle mathsize="1.44em"><mtext>Glad to meet you and thanks for reading</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mtext> </mtext><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mrow><mtext mathvariant="italic">chouchiawei</mtext><mtext> </mtext><mtext mathvariant="italic">10.23.22</mtext></mrow></mstyle></mstyle></mstyle></mrow><annotation encoding="application/x-tex">\Large\text{Glad to meet you and thanks for reading} \\ \small\textit{ }\\ \small\textit{chouchiawei 10.23.22}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2799871999999999em;vertical-align:-0.2799936em;"></span><span class="mord text sizing reset-size6 size8"><span class="mord">Glad to meet you and thanks for reading</span></span></span><span class="mspace newline sizing reset-size6 size8"></span><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord textit"> </span></span></span><span class="mspace newline sizing reset-size6 size5"></span><span class="base"><span class="strut" style="height:0.624996em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size5"><span class="mord textit">chouchiawei 10.23.22</span></span></span></span></span></span></div></figure><p id="78187727-b22b-440c-87bb-e93c22e38878" class="">
+</p><hr id="a979d0e6-0335-4ed8-abe3-a3598a4b097e"/><div id="03d9201c-1682-49fa-b6ab-845b8bbb6f47" class="column-list"><div id="295a7fc9-7f1c-49ab-a7c4-85480233ad95" style="width:100%" class="column"><p id="bb35c100-2747-4d29-b76f-cd09ec6fdcc8" class=""><span style="border-bottom:0.05em solid"><em>Twitter</em></span></p><p id="a8dd6472-dfdb-4c58-a66e-abd79498a4fe" class=""><a href="https://twitter.com/chouchiawei">火機 (@chouchiawei) / Twitter</a></p></div><div id="06cbea6f-0457-4ea9-9d19-acd31ca9c75b" style="width:100%" class="column"><p id="2e83e7c4-a649-430c-b2ab-e27737357d84" class=""><span style="border-bottom:0.05em solid"><em>Linktree</em></span></p><figure id="6f497bc2-8222-43ba-9733-f3aeb189e943"><a href="http://linktr.ee/chouchiawei" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">chouchiawei | Twitter, Facebook | Linktree</div><div class="bookmark-description">comes from Hualien</div></div><div class="bookmark-href"><img src="https://linktr.ee/_next/static/logo-assets/favicon.ico" class="icon bookmark-icon"/>http://linktr.ee/chouchiawei</div></div><img src="https://d1fdloi71mui9q.cloudfront.net/h6VjbUUeRWqf7SwD5iUR_9D33w3T61nWq8Br6" class="bookmark-image"/></a></figure></div></div></div></article></body></html>
